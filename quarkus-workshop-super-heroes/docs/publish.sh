@@ -8,14 +8,14 @@ export old=`pwd`
 mvn clean generate-resources
 #publish doc
 cd /tmp
-rm -fR /tmp/bbvahackathon.github.io
-git clone git@github.com:bbvahackathon/bbvahackathon.github.io.git
+rm -fR /tmp/Red-Hat-Developer-Games.github.io
+git clone git@github.com:Red-Hat-Developer-Games/Red-Hat-Developer-Games.github.io.git
 cd $old
 #rm -fR /tmp/bbvahackathon.github.io
-rsync -avz ./target/generated-asciidoc/ /tmp/bbvahackathon.github.io
-cp /tmp/bbvahackathon.github.io/spine.html /tmp/bbvahackathon.github.io/index.html
-cd /tmp/bbvahackathon.github.io
+rsync -avz ./target/generated-asciidoc/ /tmp/Red-Hat-Developer-Games.github.io
+cp /tmp/Red-Hat-Developer-Games.github.io/spine.html /tmp/Red-Hat-Developer-Games.github.io/index.html
+cd /tmp/Red-Hat-Developer-Games.github.io
 git add .
 git commit -m "update docs for Quarkus workshop"
-git push origin -u master
+git push origin -u main
 cd $old
