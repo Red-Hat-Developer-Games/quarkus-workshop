@@ -3,10 +3,6 @@
 
 :icons: font
 
-This workshop needs internet access to download all sorts of Maven artifacts, Docker images and even pictures.
-Some of these artifacts are large, and because we have to share internet connexions at the workshop, it is better to download them prior to the workshop.
-Here are a few commands that you can execute before the workshop.
-
 == Workshop scaffolding
 
 icon:hand-o-right[role="red", size=2x] [red big]#Call to action#
@@ -99,13 +95,13 @@ Make sure that you are authenticated with your USERNAME and you are using the `U
 
 [source,shell]
 ----
-$ oc apply -f quarkus-workshop-super-heroes/super-heroes/infrastructure/databases.yaml
+oc apply -f quarkus-workshop-super-heroes/super-heroes/infrastructure/databases.yaml
 ----
 
 You can verify the availability of databases with the following command:
 [source,shell]
 ----
-$ curl http://heroes-database.USERNAME-heroes:5432
+curl http://heroes-database.USERNAME-heroes:5432
 ----
 You should have the following response:
 
