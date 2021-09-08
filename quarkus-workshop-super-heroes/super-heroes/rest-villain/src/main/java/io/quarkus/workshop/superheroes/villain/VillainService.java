@@ -34,6 +34,7 @@ public class VillainService {
         while (randomVillain == null) {
             randomVillain = Villain.findRandom();
         }
+        System.out.println("A change to see if there are some diffrences");
         return randomVillain;
     }
 
