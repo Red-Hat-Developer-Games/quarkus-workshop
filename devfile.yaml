@@ -4,7 +4,7 @@ metadata:
 projects:
   - name: quarkus-workshop-super-heroes
     source:
-      location: 'https://github.com/Red-Hat-Developer-Games/quarkus-workshop/blob/main/quarkus-workshop-super-heroes/dist/quarkus-workshop-super-heroes.zip'
+      location: 'https://github.com/Red-Hat-Developer-Games/quarkus-workshop/raw/main/quarkus-workshop-super-heroes/dist/quarkus-workshop-super-heroes.zip'
       type: zip
 components:
   - id: redhat/quarkus-java11/latest
