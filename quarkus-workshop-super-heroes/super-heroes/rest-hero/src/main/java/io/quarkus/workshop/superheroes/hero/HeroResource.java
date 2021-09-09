@@ -158,10 +158,10 @@ public class HeroResource {
     }
 
     @GET
-    @Produces(TEXT_PLAIN)
+    @Produces(MediaType.TEXT_PLAIN)
     @Path("/hello")
     public String hello() {
-        return "hello";
+        return "hello RESTEasy";
     }
 }
 // end::adocResource[]
