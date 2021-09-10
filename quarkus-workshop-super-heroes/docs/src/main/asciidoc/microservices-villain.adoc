@@ -99,7 +99,7 @@ $ curl $URL/api/villains/582 | jq
 }
 ----
 
-Remember that you can also check Swagger UI by going to $URL/swagger-ui.
+Remember that you can also check Swagger UI by going to $URL/q/swagger-ui.
 
 [NOTE]
 --

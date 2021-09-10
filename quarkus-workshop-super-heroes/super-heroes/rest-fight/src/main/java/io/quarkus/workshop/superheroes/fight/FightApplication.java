@@ -17,7 +17,7 @@ import javax.ws.rs.core.Application;
         description = "This API allows a hero and a villain to fight",
         version = "1.0",
         contact = @Contact(name = "Quarkus", url = "https://github.com/quarkusio")),
-    externalDocs = @ExternalDocumentation(url = "https://github.com/quarkusio/quarkus-workshops", description = "All the Quarkus workshops"),
+    externalDocs = @ExternalDocumentation(url = "https://github.com/Red-Hat-Developer-Games/quarkus-workshop", description = "All the Quarkus workshops"),
     tags = {
         @Tag(name = "api", description = "Public that can be used by anybody"),
         @Tag(name = "fight", description = "Anybody interested in fights"),

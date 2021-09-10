@@ -258,4 +258,4 @@ $ curl $URL/api/fights
 Change the URL with yours.
 --
 
-Remember that you can also check Swagger UI by going to $URL/swagger-ui.
+Remember that you can also check Swagger UI by going to $URL/q/swagger-ui.
