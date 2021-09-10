@@ -37,7 +37,7 @@ If you start the tests, the `test` profile is enabled (and so the `multiplier` i
 
 icon:hand-o-right[role="red", size=2x] [red big]#Call to action#
 
-Package your application with `mvn package`, and start it with `java -Dquarkus.profile=foo -jar target/rest-hero-1.0-SNAPSHOT-runner.jar`.
+Package your application with `mvn package`, and start it with `java -Dquarkus.profile=foo -jar target/quarkus-app/quarkus-run.jar`.
 You will see that the `foo` profile is enabled.
 As not overridden, the `level.multiplier` property has the value 3.
 

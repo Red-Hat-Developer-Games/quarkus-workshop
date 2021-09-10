@@ -50,7 +50,7 @@ public class FightResourceTest {
     void shouldPingOpenAPI() {
         given()
             .header(ACCEPT, APPLICATION_JSON)
-            .when().get("/openapi")
+            .when().get("/q/openapi")
             .then()
             .statusCode(OK.getStatusCode());
     }
@@ -58,7 +58,7 @@ public class FightResourceTest {
     @Test
     void shouldPingSwaggerUI() {
         given()
-            .when().get("/swagger-ui")
+            .when().get("/q/swagger-ui")
             .then()
             .statusCode(OK.getStatusCode());
     }
@@ -71,7 +71,7 @@ public class FightResourceTest {
             .when().get("/api/fights/hello")
             .then()
             .statusCode(200)
-            .body(is("hello"));
+            .body(is("Hello RESTEasy"));
     }
 
     @Test

@@ -107,7 +107,7 @@ You will see that the level has been increased.
 
 [source,shell]
 ----
-$ curl http://localhost:8083/api/heroes/952 | jq
+$ curl $(oc get route -n USERNAME-codeready | grep 8083 | awk '{ print $2 }')/api/heroes/952 | jq
 
 {
   "id": 957,
