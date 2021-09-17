@@ -25,7 +25,7 @@ Some properties need to be added to the `application.properties` file of each mi
 quarkus.kubernetes-client.trust-certs=true
 quarkus.kubernetes-client.namespace=${PROJECT_NAME:USERNAME-heroes}
 
-quarkus.openshift.expose=true
+quarkus.openshift.route.expose=true
 --
 
 The expose parameter’s purpose is to expose the service to clients outside the cluster via `Route`.
@@ -95,7 +95,7 @@ For villain microservice follow the same approach.
 quarkus.kubernetes-client.trust-certs=true
 quarkus.kubernetes-client.namespace=${PROJECT_NAME:USERNAME-heroes}
 
-quarkus.openshift.expose=true
+quarkus.openshift.route.expose=true
 --
 
 * Also, we need to configure the new locations of the hero and villain microservice.
@@ -131,7 +131,7 @@ $ ./mvnw clean package -Dquarkus.kubernetes.deploy=true
 quarkus.kubernetes-client.trust-certs=true
 quarkus.kubernetes-client.namespace=${PROJECT_NAME:USERNAME-heroes}
 
-quarkus.openshift.expose=true
+quarkus.openshift.route.expose=true
 quarkus.openshift.env.vars.BASE_PATH=${FIGHT_ROUTE}
 --
 
