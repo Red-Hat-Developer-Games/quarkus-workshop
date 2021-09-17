@@ -104,6 +104,10 @@
         </dependency>
         <!-- end::adocDependencyMetrics[] -->
         <!-- end::adocDependency[] -->
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-openshift</artifactId>
+        </dependency>
         <!-- Test -->
         <!-- tag::adocDependencyTest[] -->
         <dependency>
