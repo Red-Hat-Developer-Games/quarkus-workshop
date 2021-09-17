@@ -63,7 +63,7 @@ deploymentconfig.apps.openshift.io/rest-hero created
 route.route.openshift.io/rest-hero created
 ----
 
-We will trigger now the image build using [`s2i`](https://docs.openshift.com/container-platform/4.7/builds/understanding-image-builds.html?extIdCarryOver=true&sc_cid=7013a000002piiDAAQ#build-strategy-s2i_understanding-image-builds) for packaging our microservice into a container image runnable by OpenShift.
+We will trigger now the image build using https://docs.openshift.com/container-platform/4.7/builds/understanding-image-builds.html?extIdCarryOver=true&sc_cid=7013a000002piiDAAQ#build-strategy-s2i_understanding-image-builds[s2i] for packaging our microservice into a container image runnable by OpenShift.
 For the `rest-hero` microservice, this can be done with the following command:
 [source, shell]
 ----
@@ -84,7 +84,7 @@ oc get pods
 oc get svc
 ----
 
-Go to the console and note that a new application appears in the `Topology` view. Click in the `Open URL` icon to access via a browser:
+Go to the console and note that a new application appears in the `Topology` view. Click in the `Open URL` icon to access it via a browser:
 
 image::rest-hero-on-openshift.png[]
 
