@@ -9,14 +9,7 @@ This chapter explores how you can deploy Quarkus applications in containers and 
 There are many different approaches to achieve these deployments.
 In this chapter, we are focusing on the creation of containers using Quarkus java executables and the deployment of our system in OpenShift using the https://quarkus.io/guides/deploying-to-openshift[Quarkus OpenShift extension].
 
-== Build and Deploy (in a single step)
-
-Add the OpenShift extension running the following command in the rest-heroes directory:
-
-[source, shell]
-----
-./mvnw quarkus:add-extension -Dextensions="openshift"
-----
+== Build and Deploy in the OpenShift cluster
 
 Some properties need to be added to the `application.properties` file of each microservice. Edit the file and add:
 
@@ -34,6 +27,77 @@ The expose parameter’s purpose is to expose the service to clients outside the
 --
 Make sure you change USERNAME with your own
 --
+
+Generate the OpenShift descriptors by running the following command:
+
+[source, shell]
+----
+./mvnw clean package
+----
+
+The descriptors will appear in the `target/kubernetes` folder as `openshift.json` and `openshift.yml` and they will contain the OpenShift resources needed to install the microservice in the OpenShift cluster.
+To deploy your microservice in the cluster, make sure you have access to it, and you are using the USERNAME-heroes project:
+
+[source, shell]
+----
+$ oc login
+$ oc project USERNAME-heroes
+----
+
+Then, apply the `openshift.yml` descriptor as follows:
+[source, shell]
+----
+oc apply -f target/kubernetes/openshift.yml
+----
+
+You should see a few resources have been created:
+
+[source, shell]
+----
+[user@workspace57dbnhjoas24i47a rest-hero]$ oc apply -f target/kubernetes/openshift.yml
+service/rest-hero created
+imagestream.image.openshift.io/openjdk-11 created
+imagestream.image.openshift.io/rest-hero created
+buildconfig.build.openshift.io/rest-hero created
+deploymentconfig.apps.openshift.io/rest-hero created
+route.route.openshift.io/rest-hero created
+----
+
+We will trigger now the image build using [`s2i`](https://docs.openshift.com/container-platform/4.7/builds/understanding-image-builds.html?extIdCarryOver=true&sc_cid=7013a000002piiDAAQ#build-strategy-s2i_understanding-image-builds) for packaging our microservice into a container image runnable by OpenShift.
+For the `rest-hero` microservice, this can be done with the following command:
+[source, shell]
+----
+oc start-build rest-hero --from-dir=target/quarkus-app
+Uploading directory "target/quarkus-app" as binary input for the build ...
+...
+Uploading finished
+build.build.openshift.io/rest-hero-1 started
+----
+
+The aforementioned command will trigger a container image build.
+To confirm the OpenShift resources have been created and the application deployed (has a pod running), you can run these commands:
+
+[source, shell]
+----
+oc get is
+oc get pods
+oc get svc
+----
+
+Go to the console and note that a new application appears in the `Topology` view. Click in the `Open URL` icon to access via a browser:
+
+image::rest-hero-on-openshift.png[]
+
+
+
+== Build and Deploy (in a single step)
+
+Add the OpenShift extension running the following command in the rest-heroes directory:
+
+[source, shell]
+----
+./mvnw quarkus:add-extension -Dextensions="openshift"
+----
 
 To trigger the build and deployment in a single step, run the following command. Make sure that you are logged and using the `USERNAME-heroes` project.
 
@@ -135,7 +199,7 @@ quarkus.openshift.route.expose=true
 quarkus.openshift.env.vars.BASE_PATH=${FIGHT_ROUTE}
 --
 
-The `` property make the UI able to contact the fight microservice. As it depends on an env var, consider to define it using the following command:
+The `BASE_PATH` property make the UI able to contact the fight microservice. As it depends on an env var, consider to define it using the following command:
 
 [source, properties]
 --
