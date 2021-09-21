@@ -11,6 +11,13 @@ In this chapter, we are focusing on the creation of containers using Quarkus jav
 
 == Build and Deploy in the OpenShift cluster
 
+Add the OpenShift extension running the following command in the rest-hero directory:
+
+[source, shell]
+----
+./mvnw quarkus:add-extension -Dextensions="openshift"
+----
+
 Some properties need to be added to the `application.properties` file of each microservice. Edit the file and add:
 
 [source, properties]
@@ -91,13 +98,6 @@ image::rest-hero-on-openshift.png[]
 
 
 == Build and Deploy (in a single step)
-
-Add the OpenShift extension running the following command in the rest-heroes directory:
-
-[source, shell]
-----
-./mvnw quarkus:add-extension -Dextensions="openshift"
-----
 
 To trigger the build and deployment in a single step, run the following command. Make sure that you are logged and using the `USERNAME-heroes` project.
 
