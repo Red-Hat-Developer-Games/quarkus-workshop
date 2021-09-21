@@ -6,7 +6,7 @@
 '''
 
 This chapter explores how you can deploy Quarkus applications in containers and Cloud platforms.
-There are many different approaches to achieve these deployments.
+There are many approaches to achieve these deployments.
 In this chapter, we are focusing on the creation of containers using Quarkus java executables and the deployment of our system in OpenShift using the https://quarkus.io/guides/deploying-to-openshift[Quarkus OpenShift extension].
 
 == Build and Deploy in the OpenShift cluster
