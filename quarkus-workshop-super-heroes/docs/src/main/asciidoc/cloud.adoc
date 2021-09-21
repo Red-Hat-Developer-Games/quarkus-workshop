@@ -129,7 +129,7 @@ If everything went well the URL of the microservice should be logged in the cons
 [INFO] [io.quarkus.kubernetes.deployment.KubernetesDeployer] Applied: BuildConfig rest-hero.
 [INFO] [io.quarkus.kubernetes.deployment.KubernetesDeployer] Applied: DeploymentConfig rest-hero.
 [INFO] [io.quarkus.kubernetes.deployment.KubernetesDeployer] Applied: Route rest-hero.
-[INFO] [io.quarkus.kubernetes.deployment.KubernetesDeployer] The deployed application can be accessed at: http://rest-hero-user2-heroes.apps.cluster-2599.2599.example.opentlc.com
+[INFO] [io.quarkus.kubernetes.deployment.KubernetesDeployer] The deployed application can be accessed at: https://rest-hero-user2-heroes.apps.cluster-2599.2599.example.opentlc.com
 [INFO] [io.quarkus.deployment.QuarkusAugmentor] Quarkus augmentation completed in 86106ms
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
@@ -203,7 +203,7 @@ The `BASE_PATH` property make the UI able to contact the fight microservice. As 
 
 [source, properties]
 --
-$ export FIGHT_ROUTE=http://$(oc get route -n USERNAME-heroes | grep fight | awk '{ print $2 }')
+$ export FIGHT_ROUTE=https://$(oc get route -n USERNAME-heroes | grep fight | awk '{ print $2 }')
 --
 [NOTE]
 --

@@ -150,7 +150,7 @@ The name of the property needs to follow a certain convention which is best disp
 include::{github-raw}/super-heroes/rest-fight/src/main/resources/application.properties[tag=adocRestClient]
 ----
 
-Having this configuration means that all requests performed using `HeroService` will use your specific rest-fight service exposed by the `USERNAME-codeready` project, http://localhost:8083 by default, as the base URL.
+Having this configuration means that all requests performed using `HeroService` will use your specific rest-fight service exposed by the `USERNAME-codeready` project, https://localhost:8083 by default, as the base URL.
 Using this configuration, calling the `findRandomHero` method of `HeroService` would result in an HTTP GET request being made to ${rest-hero-url}/api/heroes/random.
 
 This configuration works only for the `dev` profile.

@@ -201,7 +201,7 @@ icon:hand-o-right[role="red", size=2x] [red big]#Call to action#
 
 [source,shell]
 ----
-$ curl http://$(oc get route -n USERNAME-codeready | grep 8080 | awk '{ print $2 }')/api/heroes
+$ curl https://$(oc get route -n USERNAME-codeready | grep 8080 | awk '{ print $2 }')/api/heroes
 hello hero
 ----
 
