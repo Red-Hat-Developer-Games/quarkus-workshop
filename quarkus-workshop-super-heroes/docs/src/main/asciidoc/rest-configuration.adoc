@@ -26,7 +26,7 @@ icon:hand-o-right[role="red", size=2x] [red big]#Call to action#
 ----
 include::{github-raw}/super-heroes/rest-hero/src/main/resources/application.properties[tags=adocPort]
 ----
-
+As we are running our microservice inside a maven container in the Code Ready Workspace environement, we need to make it listening in the `0.0.0.0` IP. For more details check https://quarkus.io/guides/all-config#quarkus-vertx-http_quarkus.http.host
 Changing the port is one of the rare configuration that cannot be done while the application is running.
 
 icon:hand-o-right[role="red", size=2x] [red big]#Call to action#
