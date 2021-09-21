@@ -101,7 +101,7 @@ oc apply -f $CHE_PROJECTS_ROOT/quarkus-workshop-super-heroes/super-heroes/infras
 You can verify the availability of databases with the following command:
 [source,shell]
 ----
-curl https://heroes-database.USERNAME-heroes:5432
+curl http://heroes-database.USERNAME-heroes:5432
 ----
 You should have the following response:
 
