@@ -9,9 +9,7 @@ This chapter explores how you can deploy Quarkus applications in containers and 
 There are many approaches to achieve these deployments.
 In this chapter, we are focusing on the creation of containers using Quarkus java executables and the deployment of our system in OpenShift using the https://quarkus.io/guides/deploying-to-openshift[Quarkus OpenShift extension].
 
-== Build and Deploy in the OpenShift cluster
-
-Add the OpenShift extension running the following command in the rest-hero directory:
+First, add the OpenShift extension running the following command in the rest-hero directory:
 
 [source, shell]
 ----
@@ -34,6 +32,8 @@ The expose parameter’s purpose is to expose the service to clients outside the
 --
 Make sure you change USERNAME with your own
 --
+
+== Build and Deploy in the OpenShift cluster
 
 Generate the OpenShift descriptors by running the following command:
 
